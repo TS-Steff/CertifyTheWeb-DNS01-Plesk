@@ -9,5 +9,5 @@
 ## Install
  1. clone repo to your preferred Location
  2. Update start.bat --> python.exe path and path of update_le.py
- 3. Update update_le.py
+ 3. Update update_le.py  
     asdf
