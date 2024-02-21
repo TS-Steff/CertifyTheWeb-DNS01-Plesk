@@ -4,6 +4,8 @@
  Based on https://github.com/plesk/api-examples/tree/master/python3
 
 ## Requirements
+ | Name          | Link 
+ |:--------------| :----
  | CertifyTheWeb | https://certifytheweb.com/
  | Python3 | https://www.python.org/downloads/windows/
  
