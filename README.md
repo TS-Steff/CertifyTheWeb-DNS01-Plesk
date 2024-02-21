@@ -20,3 +20,12 @@
     login  
     password  
     log_filename  
+ 4. Add new Request to Certify Certificate Manager and set Authorization Settings
+    | Setting            | Value                  | Note
+    |:-------------------| :--------------------- | :----
+    | Challenge Type     | dns-01                 |
+    | DNS Update Methode | (Use Custom Script)    |
+    | Dns Zone Id        | Site id from plesk     | Open the DNS Zone in Plesk. The ID is shown in the URL
+    | Create Script Path | <path to update_le.py> |
+    | Delete Script Path | <path to update_le.py> |
+    | Propagatoin Delay  | 60                     | How many seconds to wait to check DNS after creating the _acme-challenge record
