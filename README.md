@@ -29,3 +29,11 @@
     | Create Script Path | <path to update_le.py> |
     | Delete Script Path | <path to update_le.py> |
     | Propagatoin Delay  | 60                     | How many seconds to wait to check DNS after creating the _acme-challenge record
+
+## ToDo
+ - Test Renew as the script has not yet renewn a cert
+ - start.bat  
+   paths as variables
+ - update_le.py  
+   pass host, login, password and log_filename from start.bat
+ - log rotation monthly
