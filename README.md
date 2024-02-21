@@ -4,7 +4,9 @@
  Based on https://github.com/plesk/api-examples/tree/master/python3
 
 ## Requirements
- Python3 - https://www.python.org/downloads/windows/
+ | CertifyTheWeb | https://certifytheweb.com/
+ | Python3 | https://www.python.org/downloads/windows/
+ 
 
 ## Install
  1. clone repo to your preferred Location
