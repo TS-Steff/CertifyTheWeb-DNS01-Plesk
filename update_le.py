@@ -7,6 +7,7 @@ from plesk_api_client import PleskApiClient
 import xml.etree.ElementTree as ET
 import sys
 import logging as log
+from logging.handlers import TimedRotatingFileHandler
 
 ### USER VARIABLES ###
 #host = os.getenv('REMOTE_HOST')
@@ -25,22 +26,38 @@ dns_value = ''
 
 
 ### Init other Variables ###
-debug = True
 logging = True
+debug = True
+
 
 def main(argv):
 
+
     if logging:
-        log.basicConfig(filename=log_filename, filemode='a',level=log.INFO)
+        log.basicConfig(
+            handlers=[
+                TimedRotatingFileHandler(
+                    filename=log_filename,
+                    #filemode='a',
+                    when='midnight',
+                    interval=1,
+                    backupCount=14,
+                    encoding='utf-8'
+                    )
+            ],
+            format='%(asctime)s %(levelname)s: %(message)s',
+            level=log.INFO
+        )
 
     if logging:
         log.info("---START---");
-        log.info("args: " + " ".join(sys.argv))
-        log.info(
-        "If this script did anything it would create a TXT record called " + sys.argv[2]
-        + " with the value " + sys.argv[3]
-        + " you could optionally use the domain ("+sys.argv[1]+") "
-        + " or zoneId ("+sys.argv[4]+") in your python script")
+        if debug:
+            log.info("args: " + " ".join(sys.argv))
+            log.info(
+            "If this script did anything it would create a TXT record called " + sys.argv[2]
+            + " with the value " + sys.argv[3]
+            + " you could optionally use the domain ("+sys.argv[1]+") "
+            + " or zoneId ("+sys.argv[4]+") in your python script")
         
         
     dns_record = sys.argv[2]
