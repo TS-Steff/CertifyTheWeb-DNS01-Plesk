@@ -31,7 +31,6 @@
     | Propagatoin Delay  | 60                     | How many seconds to wait to check DNS after creating the _acme-challenge record
 
 ## ToDo
- - Test Renew as the script has not yet renewn a cert
  - start.bat  
    paths as variables
  - update_le.py  
